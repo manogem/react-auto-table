@@ -18,22 +18,6 @@ import React, {Component} from 'react';
 import {fetchRequests, fetchRequestsByValue} from "../../service/FakeApiService";
 import RequestsTableContainer from "@avezen/react-auto-table";
 
-
-
-const tableHead = [
-    "Request Name",
-    "Requestor",
-    "Good Ending",
-    "Description",
-    "Need Storyteller",
-    "Storyteller",
-    "Wanted Characters",
-    "Deadline",
-    "Budget",
-    "Status",
-    "Controls",
-];
-
 const colWidths = [
     140,
     80,
