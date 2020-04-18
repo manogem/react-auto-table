@@ -6,7 +6,7 @@ import TableNavigation from "./TableNavigation";
 class Table extends Component {
 
     render() {
-        const { data, currentPage, setCurrentPage, pages, search, setSearch, sortBy, setSortBy, sortDirection, isFetching, error, colWidths, tableHead, currentlyOpenedTd, toggleTd } = this.props;
+        const {data, currentPage, setCurrentPage, pages, search, setSearch, sortBy, setSortBy, sortDirection, isFetching, error, colWidths, tableHead, currentlyOpenedTd, toggleTd} = this.props;
 
         return (
             <React.Fragment>
@@ -40,25 +40,30 @@ class Table extends Component {
 
                     <thead>
                     <tr>
-                        {tableHead.length > 0 && tableHead.map((item, key) => (
-                            <th
-                                key={key}
-                                onClick={() => setSortBy(item.replace(/\s/g, ''))}
-                            >
-                                {item}
-                                {item.replace(/\s/g, '') === sortBy && (
-                                    sortDirection === 1 ? (
-                                        <i className={'arrow down'}></i>
-                                    ) : (
-                                        <i className={'arrow up'}></i>
-                                    )
-                                )}
-                            </th>
-                        ))}
-                        <th
-                        >
-                            Actions
-                        </th>
+                        {
+                            tableHead.length > 0
+                            &&
+                            <React.Fragment>
+                                {tableHead.map((item, key) => (
+                                    <th
+                                        key={key}
+                                        onClick={() => setSortBy(item.replace(/\s/g, ''))}
+                                    >
+                                        {item}
+                                        {item.replace(/\s/g, '') === sortBy && (
+                                            sortDirection === 1 ? (
+                                                <i className={'arrow down'}></i>
+                                            ) : (
+                                                <i className={'arrow up'}></i>
+                                            )
+                                        )}
+                                    </th>
+                                ))}
+                                <th>
+                                    Actions
+                                </th>
+                            </React.Fragment>
+                        }
                     </tr>
                     </thead>
                     <tbody>
@@ -134,7 +139,7 @@ class Table extends Component {
                     className={'table-nav--bottom'}
                 >
                     <TableNavigation
-                        setPage={setCurrentPage}
+                        setCurrentPage={setCurrentPage}
                         currentPage={currentPage}
                         pages={pages}
                     />

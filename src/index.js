@@ -5,12 +5,21 @@ import './App.css';
 
 class RequestsTableContainer extends Component {
     state = {
-        tableHead: [],
+        tableHead: this.props.tableHead ? this.props.tableHead : [],
         currentlyOpenedTruncatedString: {
             id: null,
             key: null
         }
     };
+
+    componentDidUpdate(prevProps, prevState) {
+        const { data } = this.props;
+
+        if (prevProps.data !== data) {
+            let tableHead = Object.keys(data[0]);
+            this.setState({tableHead});
+        }
+    }
 
     render() {
         const { tableHead, currentlyOpenedTruncatedString } = this.state;
@@ -67,23 +76,19 @@ class RequestsTableContainer extends Component {
     };
 
     setSortBy = (value) => {
-        const {tableHead, sortBy, setSortBy, sortDirection, setSortDirection} = this.props;
-
-        if (value === tableHead[tableHead.length - 1]) {
-            return;
-        }
+        const { sortBy, setSortBy, sortDirection, setSortDirection } = this.props;
 
         let newSortDirection = sortDirection;
 
         if (value === sortBy) {
             newSortDirection = newSortDirection * -1;
 
-            setSortDirection(newSortDirection)
+            setSortDirection(newSortDirection);
         } else {
             newSortDirection = 1;
 
-            setSortDirection(newSortDirection)
-            setSortBy(value)
+            setSortDirection(newSortDirection);
+            setSortBy(value);
         }
     };
 }
