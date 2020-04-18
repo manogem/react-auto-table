@@ -16,7 +16,7 @@ $ npm install @avezen/react-auto-table
 ```js
 import React, {Component} from 'react';
 import {fetchRequests, fetchRequestsByValue} from "../../service/FakeApiService";
-import RequestsTableContainer from "@avezen/react-auto-table";
+import RequestsTable from "@avezen/react-auto-table";
 
 const colWidths = [
     140,
@@ -32,7 +32,7 @@ const colWidths = [
     70
 ];
 
-class RequestsContainer extends Component {
+class RequestsTableContainer extends Component {
     state = {
         requests: [],
         currentPage: 1,
@@ -51,7 +51,7 @@ class RequestsContainer extends Component {
     render() {
         const { requests, currentPage, pages, search, sortBy, sortDirection, isFetching, error } = this.state;
         return (
-            <RequestsTableContainer
+            <RequestsTable
                 data={requests}
                 currentPage={currentPage}
                 setCurrentPage={this.setPage}
@@ -130,5 +130,5 @@ class RequestsContainer extends Component {
     };
 }
 
-export default RequestsContainer;
+export default RequestsTableContainer;
 ```
