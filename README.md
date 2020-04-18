@@ -1,7 +1,7 @@
 # @avezen/react-auto-table
 
-[![npm (scoped)](https://img.shields.io/npm/v/@bamblehorse/tiny.svg)](https://www.npmjs.com/package/@avezen/react-auto-table)
-[![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/@bamblehorse/tiny.svg)](https://www.npmjs.com/package/@avezen/react-auto-table)
+[![npm (scoped)](https://img.shields.io/npm/v/@avezen/react-auto-table.svg)](https://www.npmjs.com/package/@avezen/react-auto-table)
+[![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/@avezen/react-auto-table.svg)](https://www.npmjs.com/package/@avezen/react-auto-table)
 
 Removes all spaces from a string.
 
