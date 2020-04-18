@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Table from "./Table";
+import {Table} from "./Table";
 import './App.css';
 
 
@@ -23,7 +23,7 @@ class RequestsTableContainer extends Component {
 
     render() {
         const { tableHead, currentlyOpenedTruncatedString } = this.state;
-        const { data, currentPage, pages, search, sortBy, sortDirection, isFetching, error, colWidths } = this.props;
+        const { data, currentPage, pages, search, sortBy, sortDirection, isFetching, error, colWidths, theme } = this.props;
 
         return (
             <Table
@@ -39,6 +39,7 @@ class RequestsTableContainer extends Component {
                 isFetching={isFetching}
                 error={error}
                 colWidths={colWidths}
+                theme={theme}
 
                 tableHead={tableHead}
                 currentlyOpenedTd={currentlyOpenedTruncatedString}
@@ -50,7 +51,11 @@ class RequestsTableContainer extends Component {
     toggleCurrentlyOpenedTruncatedString = (id, key) => {
         const {currentlyOpenedTruncatedString} = this.state;
 
-        if (currentlyOpenedTruncatedString.id === id && currentlyOpenedTruncatedString.key === key) {
+        if (
+            currentlyOpenedTruncatedString.id === id
+            &&
+            currentlyOpenedTruncatedString.key === key
+        ) {
             this.setState({currentlyOpenedTruncatedString: {id: null, key: null}})
         } else {
             this.setState({currentlyOpenedTruncatedString: {id, key}})
