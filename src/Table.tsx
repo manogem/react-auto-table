@@ -96,13 +96,13 @@ export const Table = ({
 
             return (
               <tr key={key}>
-                {Object.entries(item).map(([key, value]: [string, any]) => {
+                {Object.entries(item).map(([objectKey, value]: [string, any]) => {
                   return (
                     <td>
                       <TruncatedString
                         toggled={item.Id === currentlyOpenedTd.id && key === currentlyOpenedTd.key}
                         toggleTd={() => toggleTd(item.Id, key)}
-                        string={value}
+                        value={value}
                       />
                     </td>
                   );

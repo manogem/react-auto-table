@@ -8,35 +8,35 @@ const truncateLong = 500;
 interface TruncatedStringProps {
   toggled: boolean;
   toggleTd: () => {};
-  string: string;
+  value: string;
 }
 
 class TruncatedString extends Component<TruncatedStringProps> {
 
-  truncateString = (string: string, to: number) => {
-    if (string && typeof string === 'string') {
-      string = string.split(';').join('; ');
+  truncateString = (value: string, to: number) => {
+    if (value && typeof value === 'string') {
+      value = value.split(';').join('; ');
 
-      if (string.length > to) {
-        return `${string.substring(0, to)}...`;
+      if (value.length > to) {
+        return `${value.substring(0, to)}...`;
       }
 
-      return string;
+      return value;
     }
-    return string;
+    return value;
   };
 
   render() {
-    const { string, toggleTd, toggled } = this.props;
+    const { value, toggleTd, toggled } = this.props;
 
     return (
       <div className={'truncated-string'}>
-        <div>{this.truncateString(string, truncateShort)}</div>
-        {string && string.length > truncateShort && (
+        <div>{this.truncateString(value, truncateShort)}</div>
+        {value && value.length > truncateShort && (
           <div onClick={toggleTd} className="custom-tooltip">
             <img src={expand} alt={'expand'} width={15} />
             <span className={`tooltip-text ${toggled ? 'visible' : ''}`}>
-              {this.truncateString(string, truncateLong)}
+              {this.truncateString(value, truncateLong)}
             </span>
           </div>
         )}
