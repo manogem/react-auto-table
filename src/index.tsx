@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Table} from './Table';
+import {TableComponent} from './TableComponent';
 import './App.css';
 
 interface AutoTableProps {
@@ -39,7 +39,7 @@ export class AutoTable extends Component<AutoTableProps & AutoTableState> {
     componentDidUpdate(prevProps: AutoTableProps, prevState: AutoTableState) {
         const {data} = this.props;
 
-        if (data && prevProps.data !== data) {
+        if (data && prevProps.data !== data && !this.props.tableHead) {
             const tableHead = Object.keys(data[0]);
             this.setState({tableHead});
         }
@@ -50,10 +50,11 @@ export class AutoTable extends Component<AutoTableProps & AutoTableState> {
         const {data, currentPage, pages, search, sortBy, sortDirection, isFetching, error, colWidths} = this.props;
 
         return (
-            <Table
+            <TableComponent
                 data={data}
                 currentPage={currentPage}
                 setCurrentPage={this.setCurrentPage}
+                modifyCurrentPage={this.modifyCurrentPage}
                 pages={pages}
                 search={search}
                 setSearch={this.setSearch}
@@ -80,10 +81,20 @@ export class AutoTable extends Component<AutoTableProps & AutoTableState> {
         }
     };
 
-    setCurrentPage = (changeBy: number) => {
-        const {currentPage, setCurrentPage, pages} = this.props;
+    setCurrentPage = (e: any) => {
+        const {setCurrentPage, pages} = this.props;
+        const newCurrentPage = parseInt(e.target.value);
 
-        const newCurrentPage = currentPage + changeBy;
+        if (!newCurrentPage || (newCurrentPage > pages || newCurrentPage <= 0)) {
+            return;
+        }
+
+        setCurrentPage(newCurrentPage);
+    };
+
+    modifyCurrentPage = (modifyBy: number) => {
+        const {currentPage, setCurrentPage, pages} = this.props;
+        const newCurrentPage = currentPage + modifyBy;
 
         if (newCurrentPage > pages || newCurrentPage <= 0) {
             return;

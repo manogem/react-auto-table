@@ -3,7 +3,6 @@
   "version": "1.0.3",
   "description": "",
   "main": "build/index.js",
-  "types": "build/index.d.ts",
   "scripts": {
     "build": "webpack",
     "format": "prettier --write \"src/**/*.tsx\"",
@@ -12,7 +11,8 @@
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "test": "jest -c jest.config.js --watch"
   },
   "author": "avezen",
   "license": "ISC",
@@ -21,22 +21,28 @@
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/preset-env": "^7.7.6",
     "@babel/preset-react": "^7.7.4",
+    "@testing-library/jest-dom": "^5.5.0",
+    "@testing-library/react": "^10.0.2",
+    "@types/jest": "^25.2.1",
     "@types/react": "^16.9.34",
+    "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "css-loader": "^3.3.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^25.3.0",
     "prettier": "^2.0.4",
+    "react-dom": "^16.13.1",
     "style-loader": "^1.0.1",
     "svg-url-loader": "^5.0.0",
+    "ts-jest": "^25.4.0",
     "tslint": "^6.1.1",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.8.3",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
-    "awesome-typescript-loader": "^5.2.1"
+    "webpack-cli": "^3.3.10"
   },
   "dependencies": {
-    "assignment": "file:../table-form",
     "prop-types": "^15.7.2",
     "react": "^16.12.0"
   },

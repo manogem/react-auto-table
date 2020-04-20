@@ -5,9 +5,9 @@ import expand from './assets/images/expand-alt-solid.svg';
 const truncateShort = 50;
 const truncateLong = 500;
 
-interface TruncatedStringProps {
+export interface TruncatedStringProps {
   toggled: boolean;
-  toggleTd: () => {};
+  toggleTd: any;
   value: string;
 }
 
@@ -31,11 +31,11 @@ class TruncatedString extends Component<TruncatedStringProps> {
 
     return (
       <div className={'truncated-string'}>
-        <div>{this.truncateString(value, truncateShort)}</div>
+        <div data-testid="truncated-value">{this.truncateString(value, truncateShort)}</div>
         {value && value.length > truncateShort && (
-          <div onClick={toggleTd} className="custom-tooltip">
-            <img src={expand} alt={'expand'} width={15} />
-            <span className={`tooltip-text ${toggled ? 'visible' : ''}`}>
+          <div data-testid="expand-tooltip" onClick={toggleTd} className="custom-tooltip">
+            <img data-testid="expand-icon" src={expand} alt={'expand'} width={15} />
+            <span data-testid="full-value" className={`tooltip-text ${toggled ? 'visible' : ''}`}>
               {this.truncateString(value, truncateLong)}
             </span>
           </div>
