@@ -28,7 +28,7 @@ export const TableBody = ({
     <tbody>
     {isFetching ? (
         <tr>
-            <td colSpan={colWidths && (colWidths.length === 0 ? 1 : colWidths.length)}>
+            <td colSpan={100}>
                 <div className={'fetch-info'}>
                     <img src={loader} alt={'loader'} width={30}/>
                 </div>
@@ -61,13 +61,13 @@ export const TableBody = ({
         })
     ) : error ? (
         <tr>
-            <td colSpan={tableHead.length}>
+            <td colSpan={100}>
                 <div className={'fetch-info'}>Error while fetching data</div>
             </td>
         </tr>
     ) : (
         <tr>
-            <td colSpan={tableHead.length}>
+            <td colSpan={100}>
                 <div className={'fetch-info'}>Not found</div>
             </td>
         </tr>
