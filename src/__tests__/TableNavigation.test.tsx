@@ -1,6 +1,8 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import { TableNavigation, TableNavigationProps } from "../TableNavigation";
+import {shallow} from "enzyme";
+import {Hello} from "../Hello";
 
 function renderTableNavigation(props: Partial<TableNavigationProps> = {}) {
     const defaultProps: TableNavigationProps = {
@@ -56,5 +58,10 @@ describe("<TableNavigation />", () => {
         fireEvent.change(numberInput, {target: {value: '3'}});
 
         expect(setCurrentPage).toHaveBeenCalledTimes(1);
+    });
+
+    test("hello", async () => {
+        const result = shallow(<Hello />).contains(<div>hello</div>);
+        expect(result).toBeTruthy();
     });
 });
