@@ -2,8 +2,9 @@ import React from 'react';
 // @ts-ignore
 import { TableNavigation } from './TableNavigation';
 import {Table} from "./Table";
+import {SearchInput} from "./SearchInput";
 
-interface TableComponentProps {
+export interface TableComponentProps {
   data?: any[];
   currentPage: number;
   setCurrentPage: any;
@@ -46,7 +47,7 @@ export const TableComponent = ({
   <React.Fragment>
     <div className={'table-nav--top'}>
       <TableNavigation setCurrentPage={setCurrentPage} modifyCurrentPage={modifyCurrentPage} currentPage={currentPage} pages={pages} />
-      <input className={'input'} value={search} type={'text'} placeholder={'Search...'} onChange={setSearch} />
+      <SearchInput search={search} setSearch={setSearch}/>
     </div>
     <Table
         data={data}

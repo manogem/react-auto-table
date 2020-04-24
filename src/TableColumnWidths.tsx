@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface TableColumnWidthsProps {
+export interface TableColumnWidthsProps {
     colWidths?: number[];
 }
 

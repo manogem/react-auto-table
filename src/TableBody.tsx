@@ -3,15 +3,15 @@ import TruncatedString from './TruncatedString';
 // @ts-ignore
 import loader from './assets/images/loader.svg'
 
-interface TableBodyProps {
+export interface TableBodyProps {
     data?: any[];
     isFetching: boolean;
     error?: boolean;
     colWidths?: number[];
     tableHead: string[];
     currentlyOpenedTd: {
-        id: null,
-        key: null,
+        id: any,
+        key: any,
     };
     toggleTd: any;
 }
@@ -45,8 +45,8 @@ export const TableBody = ({
                         return (
                             <td key={objectKey}>
                                 <TruncatedString
-                                    toggled={item.Id === currentlyOpenedTd.id && key === currentlyOpenedTd.key}
-                                    toggleTd={() => toggleTd(item.Id, key)}
+                                    toggled={item.Id === currentlyOpenedTd.id && objectKey === currentlyOpenedTd.key}
+                                    toggleTd={() => toggleTd(item.Id, objectKey)}
                                     value={value}
                                 />
                             </td>

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TableColumnWidths /> should render component 1`] = `
+<colgroup>
+  <col
+    width={12}
+  />
+  <col
+    width={23}
+  />
+</colgroup>
+`;

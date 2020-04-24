@@ -3,7 +3,7 @@ import {TableHead} from "./TableHead";
 import {TableBody} from "./TableBody";
 import {TableColumnWidths} from "./TableColumnWidths";
 
-interface TableProps {
+export interface TableProps {
   data?: any[];
   sortBy: string;
   setSortBy: any;

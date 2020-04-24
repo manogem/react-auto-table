@@ -1,5 +1,4 @@
 import React from "react";
-import {render, fireEvent} from "@testing-library/react";
 import {TableHead, TableHeadProps} from "../TableHead";
 import renderer from 'react-test-renderer';
 import {mount} from "enzyme";
