@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface TableHeadProps {
+export interface TableHeadProps {
     sortBy: string;
     setSortBy: any;
     sortDirection: number;

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TableHead /> should render component 1`] = `
+<thead>
+  <tr>
+    <th
+      onClick={[Function]}
+    >
+      Id
+      <i
+        className="arrow down"
+      />
+    </th>
+    <th
+      onClick={[Function]}
+    >
+      Name
+    </th>
+    <th>
+      Actions
+    </th>
+  </tr>
+</thead>
+`;
