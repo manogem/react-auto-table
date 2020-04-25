@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {TableComponent} from './TableComponent';
 import './App.css';
 
-interface AutoTableProps {
+export interface AutoTableProps {
     data?: any[];
     currentPage: number;
     setCurrentPage: any;
@@ -22,12 +22,12 @@ interface AutoTableProps {
 interface AutoTableState {
     tableHead: string[];
     currentlyOpenedTruncatedString: {
-        id: number,
-        key: number
+        id: any,
+        key: any
     };
 }
 
-export class AutoTable extends Component<AutoTableProps & AutoTableState> {
+export class AutoTable extends Component<AutoTableProps, AutoTableState> {
     state = {
         tableHead: this.props.tableHead ? this.props.tableHead : [],
         currentlyOpenedTruncatedString: {
