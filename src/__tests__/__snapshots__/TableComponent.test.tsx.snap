@@ -23,6 +23,7 @@ Array [
         <input
           className="input number-input"
           data-testid="number-input"
+          name="page"
           onChange={[Function]}
           type="number"
           value={1}
@@ -159,6 +160,7 @@ Array [
         <input
           className="input number-input"
           data-testid="number-input"
+          name="page"
           onChange={[Function]}
           type="number"
           value={1}

@@ -13,7 +13,7 @@ export const TableNavigation = ({ setCurrentPage, modifyCurrentPage, currentPage
       Page {currentPage} of {pages}.
     </span>
     <div className={'number-wrapper'}>
-      <input data-testid="number-input" className={'input number-input'} value={currentPage} type={'number'} onChange={setCurrentPage} />
+      <input data-testid="number-input" className={'input number-input'} name={'page'} value={currentPage} type={'number'} onChange={setCurrentPage} />
       <div data-testid="number-up" className={'number-up'} onClick={() => modifyCurrentPage(1)}></div>
       <div data-testid="number-down" className={'number-down'} onClick={() => modifyCurrentPage(-1)}></div>
     </div>

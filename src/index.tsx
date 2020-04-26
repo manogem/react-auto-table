@@ -14,7 +14,7 @@ export interface AutoTableProps {
     sortDirection: number;
     setSortDirection: any;
     isFetching: boolean;
-    error?: boolean;
+    error?: any;
     colWidths?: number[];
     tableHead?: string[];
 }

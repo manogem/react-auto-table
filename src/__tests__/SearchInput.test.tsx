@@ -6,7 +6,8 @@ import {mount} from "enzyme";
 function renderSearchInput(props: Partial<SearchInputProps> = {}) {
     const defaultProps: SearchInputProps = {
         search: 'ok',
-        setSearch: () => {}
+        setSearch: () => {
+        }
     };
 
     return <SearchInput {...defaultProps} {...props} />;
@@ -21,20 +22,33 @@ describe("<SearchInput />", () => {
 
     test('should render search input correctly with empty value', () => {
         const props = {
-                search: ''
-            };
+            search: ''
+        };
         const findByTestId = renderSearchInput(props),
             SearchInputComponent = mount(findByTestId).find('input');
         expect(SearchInputComponent.props().value).toEqual('');
     });
 
     test('should check the onChange callback', () => {
-        const setSearch = jest.fn(),
+        const setSearch = jest.fn((item) => {
+                return item
+            }),
 
             findByTestId = renderSearchInput({setSearch}),
             SearchInputComponent = mount(findByTestId).find('input');
 
-        SearchInputComponent.simulate('change', { target: { value: 'test' } });
-        expect(setSearch).toHaveBeenCalledTimes(1);
+        SearchInputComponent.simulate('change', {target: {value: 'test'}});
+
+        expect(setSearch.mock.calls[0][0].target).toEqual(
+            expect.objectContaining({
+                value: 'test'
+            })
+        );
+
+        expect(setSearch).toHaveBeenCalledWith(
+            expect.objectContaining({
+                target: { value: 'test' }
+            })
+        );
     });
 });
