@@ -17,6 +17,7 @@ export interface TableProps {
     key: null,
   };
   toggleTd: any;
+  config: any;
 }
 
 export const Table = ({
@@ -30,6 +31,7 @@ export const Table = ({
   tableHead,
   currentlyOpenedTd,
   toggleTd,
+  config
 }: TableProps) => (
     <table>
       <TableColumnWidths
@@ -40,6 +42,7 @@ export const Table = ({
           setSortBy={setSortBy}
           sortDirection={sortDirection}
           tableHead={tableHead}
+          config={config}
       />
       <TableBody
           data={data}
@@ -48,6 +51,7 @@ export const Table = ({
           colWidths={colWidths}
           currentlyOpenedTd={currentlyOpenedTd}
           toggleTd={toggleTd}
+          config={config}
       />
     </table>
 );

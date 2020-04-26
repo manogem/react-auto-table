@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // @ts-ignore
 import expand from './assets/images/expand-alt-solid.svg';
+import {formatType} from "./formatter";
 
 const truncateShort = 50;
 const truncateLong = 500;
@@ -9,22 +10,24 @@ export interface TruncatedStringProps {
   toggled: boolean;
   toggleTd: any;
   value: string;
+  type?: string | null;
 }
 
 class TruncatedString extends Component<TruncatedStringProps> {
 
   truncateString = (value: string, to: number) => {
-    if (value && typeof value === 'string') {
-      value = value.split(';').join('; ');
+    const {type} = this.props;
 
-      if (value.length > to) {
-        return `${value.substring(0, to)}...`;
-      }
-
-      return value;
+    if (value && value.length > to) {
+      return `${value.substring(0, to)}...`;
     }
+
+    value = formatType(value, type);
+
     return value;
   };
+
+
 
   render() {
     const { value, toggleTd, toggled } = this.props;

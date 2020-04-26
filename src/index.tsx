@@ -17,6 +17,7 @@ export interface AutoTableProps {
     error?: any;
     colWidths?: number[];
     tableHead?: string[];
+    config?: any;
 }
 
 interface AutoTableState {
@@ -47,7 +48,7 @@ export class AutoTable extends Component<AutoTableProps, AutoTableState> {
 
     render() {
         const {tableHead, currentlyOpenedTruncatedString} = this.state;
-        const {data, currentPage, pages, search, sortBy, sortDirection, isFetching, error, colWidths} = this.props;
+        const {data, currentPage, pages, search, sortBy, sortDirection, isFetching, error, colWidths, config} = this.props;
 
         return (
             <TableComponent
@@ -67,6 +68,7 @@ export class AutoTable extends Component<AutoTableProps, AutoTableState> {
                 tableHead={tableHead}
                 currentlyOpenedTd={currentlyOpenedTruncatedString}
                 toggleTd={this.toggleCurrentlyOpenedTruncatedString}
+                config={config}
             />
         );
     }

@@ -24,6 +24,7 @@ export interface TableComponentProps {
     key: null,
   };
   toggleTd: any;
+  config?: any;
 }
 
 export const TableComponent = ({
@@ -43,6 +44,7 @@ export const TableComponent = ({
   tableHead,
   currentlyOpenedTd,
   toggleTd,
+  config
 }: TableComponentProps) => (
   <React.Fragment>
     <div className={'table-nav--top'}>
@@ -60,6 +62,7 @@ export const TableComponent = ({
         currentlyOpenedTd={currentlyOpenedTd}
         toggleTd={toggleTd}
         error={error}
+        config={config}
     />
     <div className={'table-nav--bottom'}>
       <TableNavigation setCurrentPage={setCurrentPage} modifyCurrentPage={modifyCurrentPage} currentPage={currentPage} pages={pages} />

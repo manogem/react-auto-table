@@ -12,6 +12,19 @@ const colWidths = [
     80
 ];
 
+const config = {
+    id: {
+        name: 'Id',
+    },
+    name: {
+        name: 'Name'
+    },
+    date: {
+        name: 'Date',
+        type: 'timestamp'
+    }
+};
+
 class UseCase extends Component {
     state = {
         data: [],
@@ -46,6 +59,7 @@ class UseCase extends Component {
                 isFetching={isFetching}
                 error={error}
                 colWidths={colWidths}
+                config={config}
             />
         );
     }

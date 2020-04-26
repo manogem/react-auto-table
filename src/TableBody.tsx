@@ -14,6 +14,7 @@ export interface TableBodyProps {
         key: any,
     };
     toggleTd: any;
+    config: any;
 }
 
 export const TableBody = ({
@@ -24,6 +25,7 @@ export const TableBody = ({
                           tableHead,
                           currentlyOpenedTd,
                           toggleTd,
+                          config
                       }: TableBodyProps) => (
     <tbody>
     {isFetching ? (
@@ -35,22 +37,25 @@ export const TableBody = ({
             </td>
         </tr>
     ) : data && data.length > 0 ? (
-        data.map((item: any, key: number) => {
-            // let dateString = new Date(item.Deadline).toLocaleString('pl-PL', { hour12: false });
-            // dateString = dateString.substr(0, dateString.indexOf(','));
-
+        data.map((item: any) => {
+            Object.entries(item).map(([objectKey, value]: [string, any]) => {
+                if(config[objectKey]){
+                    config[objectKey].value = value
+                }
+            });
             return (
-                <tr key={key}>
-                    {Object.entries(item).map(([objectKey, value]: [string, any]) => {
+                <tr key={item.id}>
+                    {Object.entries(config).map(([objectKey, value]: [string, any]) => {
                         return (
-                            <td key={objectKey}>
-                                <TruncatedString
-                                    toggled={item.Id === currentlyOpenedTd.id && objectKey === currentlyOpenedTd.key}
-                                    toggleTd={() => toggleTd(item.Id, objectKey)}
-                                    value={value}
-                                />
-                            </td>
-                        );
+                                <td key={objectKey}>
+                                    <TruncatedString
+                                        toggled={item.Id === currentlyOpenedTd.id && objectKey === currentlyOpenedTd.key}
+                                        toggleTd={() => toggleTd(item.Id, objectKey)}
+                                        value={value.value}
+                                        type={value.type}
+                                    />
+                                </td>
+                            );
                     })}
 
                     <td>
