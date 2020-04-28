@@ -32,6 +32,7 @@ function renderTableComponent(props: Partial<TableComponentProps> = {}) {
             key: null,
         },
         toggleTd: () => {},
+        config: {}
     };
 
     return <TableComponent {...defaultProps} {...props} />;

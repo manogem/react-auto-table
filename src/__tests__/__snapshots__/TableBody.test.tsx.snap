@@ -24,56 +24,12 @@ exports[`<TableBody /> should render component with data 1`] = `
 <tbody>
   <tr>
     <td>
-      <div
-        className="truncated-string"
-      >
-        <div
-          data-testid="truncated-value"
-        >
-          1
-        </div>
-      </div>
-    </td>
-    <td>
-      <div
-        className="truncated-string"
-      >
-        <div
-          data-testid="truncated-value"
-        >
-          Test 1
-        </div>
-      </div>
-    </td>
-    <td>
       <button>
         Edit
       </button>
     </td>
   </tr>
   <tr>
-    <td>
-      <div
-        className="truncated-string"
-      >
-        <div
-          data-testid="truncated-value"
-        >
-          2
-        </div>
-      </div>
-    </td>
-    <td>
-      <div
-        className="truncated-string"
-      >
-        <div
-          data-testid="truncated-value"
-        >
-          Test 2
-        </div>
-      </div>
-    </td>
     <td>
       <button>
         Edit
@@ -87,56 +43,12 @@ exports[`<TableBody /> should render component with data 2`] = `
 <tbody>
   <tr>
     <td>
-      <div
-        className="truncated-string"
-      >
-        <div
-          data-testid="truncated-value"
-        >
-          1
-        </div>
-      </div>
-    </td>
-    <td>
-      <div
-        className="truncated-string"
-      >
-        <div
-          data-testid="truncated-value"
-        >
-          Test 1
-        </div>
-      </div>
-    </td>
-    <td>
       <button>
         Edit
       </button>
     </td>
   </tr>
   <tr>
-    <td>
-      <div
-        className="truncated-string"
-      >
-        <div
-          data-testid="truncated-value"
-        >
-          2
-        </div>
-      </div>
-    </td>
-    <td>
-      <div
-        className="truncated-string"
-      >
-        <div
-          data-testid="truncated-value"
-        >
-          Test 2
-        </div>
-      </div>
-    </td>
     <td>
       <button>
         Edit
@@ -150,74 +62,12 @@ exports[`<TableBody /> should render component with data, with toggled tooltip 1
 <tbody>
   <tr>
     <td>
-      <div
-        className="truncated-string"
-      >
-        <div
-          data-testid="truncated-value"
-        >
-          1
-        </div>
-      </div>
-    </td>
-    <td>
-      <div
-        className="truncated-string"
-      >
-        <div
-          data-testid="truncated-value"
-        >
-          Test 1, Test 1, Test 1, Test 1, Test 1, Test 1, Te...
-        </div>
-        <div
-          className="custom-tooltip"
-          data-testid="expand-tooltip"
-          onClick={[Function]}
-        >
-          <img
-            alt="expand"
-            data-testid="expand-icon"
-            src="test-file-stub"
-            width={15}
-          />
-          <span
-            className="tooltip-text visible"
-            data-testid="full-value"
-          >
-            Test 1, Test 1, Test 1, Test 1, Test 1, Test 1, Test 1, Test 1, Test 1, Test 1, Test 1, Test 1, Test 1, Test 1, Test 1, 
-          </span>
-        </div>
-      </div>
-    </td>
-    <td>
       <button>
         Edit
       </button>
     </td>
   </tr>
   <tr>
-    <td>
-      <div
-        className="truncated-string"
-      >
-        <div
-          data-testid="truncated-value"
-        >
-          2
-        </div>
-      </div>
-    </td>
-    <td>
-      <div
-        className="truncated-string"
-      >
-        <div
-          data-testid="truncated-value"
-        >
-          Test 2
-        </div>
-      </div>
-    </td>
     <td>
       <button>
         Edit

@@ -24,7 +24,7 @@ const compare = (a: any, b: any, value: any, direction: any) => {
 };
 
 export const fetchDataByValue = (value: string, currentPage: number, sortBy: string, sortDirection: number, itemsPerPage: number) => {
-    var dataSearchResult = data.filter((obj: any) => {
+    const dataSearchResult = data.filter((obj: any) => {
         for (const key in obj) {
             if (obj[key] && String(obj[key]).toUpperCase().includes(value.toUpperCase())) {
                 return true;
@@ -38,14 +38,14 @@ export const fetchDataByValue = (value: string, currentPage: number, sortBy: str
     const indexOfLastItem = Number(currentPage) * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentData = {
-        itemsPerPage: itemsPerPage,
-        currentPage: currentPage,
+        itemsPerPage,
+        currentPage,
         pages: Math.ceil(dataSearchResult.length / itemsPerPage),
         data: dataSearchResult.slice(indexOfFirstItem, indexOfLastItem)
     };
 
     return new Promise((resolve, reject) => {
-        let wait = setTimeout(() => {
+        const wait = setTimeout(() => {
             clearTimeout(wait);
             resolve(currentData);
             reject('Wrong')
@@ -60,14 +60,14 @@ const fetchData = (currentPage: number, sortBy: string, sortDirection: number, i
     const indexOfLastItem = Number(currentPage) * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentData = {
-        itemsPerPage: itemsPerPage,
-        currentPage: currentPage,
+        itemsPerPage,
+        currentPage,
         pages: Math.ceil(data.length / itemsPerPage),
         data: data.slice(indexOfFirstItem, indexOfLastItem)
     };
 
     return new Promise((resolve, reject) => {
-        let wait = setTimeout(() => {
+        const wait = setTimeout(() => {
             clearTimeout(wait);
             resolve(currentData);
             reject('Wrong')

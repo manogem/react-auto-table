@@ -33,56 +33,12 @@ exports[`<Table /> should render component with data, with tableHead, with colWi
   <tbody>
     <tr>
       <td>
-        <div
-          className="truncated-string"
-        >
-          <div
-            data-testid="truncated-value"
-          >
-            1
-          </div>
-        </div>
-      </td>
-      <td>
-        <div
-          className="truncated-string"
-        >
-          <div
-            data-testid="truncated-value"
-          >
-            Test 1
-          </div>
-        </div>
-      </td>
-      <td>
         <button>
           Edit
         </button>
       </td>
     </tr>
     <tr>
-      <td>
-        <div
-          className="truncated-string"
-        >
-          <div
-            data-testid="truncated-value"
-          >
-            2
-          </div>
-        </div>
-      </td>
-      <td>
-        <div
-          className="truncated-string"
-        >
-          <div
-            data-testid="truncated-value"
-          >
-            Test 2
-          </div>
-        </div>
-      </td>
       <td>
         <button>
           Edit
@@ -126,56 +82,12 @@ exports[`<Table /> should render component with data, with tableHead, with colWi
   <tbody>
     <tr>
       <td>
-        <div
-          className="truncated-string"
-        >
-          <div
-            data-testid="truncated-value"
-          >
-            1
-          </div>
-        </div>
-      </td>
-      <td>
-        <div
-          className="truncated-string"
-        >
-          <div
-            data-testid="truncated-value"
-          >
-            Test 1
-          </div>
-        </div>
-      </td>
-      <td>
         <button>
           Edit
         </button>
       </td>
     </tr>
     <tr>
-      <td>
-        <div
-          className="truncated-string"
-        >
-          <div
-            data-testid="truncated-value"
-          >
-            2
-          </div>
-        </div>
-      </td>
-      <td>
-        <div
-          className="truncated-string"
-        >
-          <div
-            data-testid="truncated-value"
-          >
-            Test 2
-          </div>
-        </div>
-      </td>
       <td>
         <button>
           Edit
@@ -219,56 +131,12 @@ exports[`<Table /> should render component with data, with tableHead, with colWi
   <tbody>
     <tr>
       <td>
-        <div
-          className="truncated-string"
-        >
-          <div
-            data-testid="truncated-value"
-          >
-            1
-          </div>
-        </div>
-      </td>
-      <td>
-        <div
-          className="truncated-string"
-        >
-          <div
-            data-testid="truncated-value"
-          >
-            Test 1
-          </div>
-        </div>
-      </td>
-      <td>
         <button>
           Edit
         </button>
       </td>
     </tr>
     <tr>
-      <td>
-        <div
-          className="truncated-string"
-        >
-          <div
-            data-testid="truncated-value"
-          >
-            2
-          </div>
-        </div>
-      </td>
-      <td>
-        <div
-          className="truncated-string"
-        >
-          <div
-            data-testid="truncated-value"
-          >
-            Test 2
-          </div>
-        </div>
-      </td>
       <td>
         <button>
           Edit

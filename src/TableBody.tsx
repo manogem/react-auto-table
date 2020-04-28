@@ -39,13 +39,13 @@ export const TableBody = ({
     ) : data && data.length > 0 ? (
         data.map((item: any) => {
             Object.entries(item).map(([objectKey, value]: [string, any]) => {
-                if(config[objectKey]){
+                if(config && config[objectKey]){
                     config[objectKey].value = value
                 }
             });
             return (
                 <tr key={item.id}>
-                    {Object.entries(config).map(([objectKey, value]: [string, any]) => {
+                    {config && Object.entries(config).map(([objectKey, value]: [string, any]) => {
                         return (
                                 <td key={objectKey}>
                                     <TruncatedString

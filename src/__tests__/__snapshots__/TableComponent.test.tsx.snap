@@ -60,19 +60,6 @@ Array [
     </colgroup>
     <thead>
       <tr>
-        <th
-          onClick={[Function]}
-        >
-          Id
-          <i
-            className="arrow down"
-          />
-        </th>
-        <th
-          onClick={[Function]}
-        >
-          Name
-        </th>
         <th>
           Actions
         </th>
@@ -81,56 +68,12 @@ Array [
     <tbody>
       <tr>
         <td>
-          <div
-            className="truncated-string"
-          >
-            <div
-              data-testid="truncated-value"
-            >
-              1
-            </div>
-          </div>
-        </td>
-        <td>
-          <div
-            className="truncated-string"
-          >
-            <div
-              data-testid="truncated-value"
-            >
-              Test 1
-            </div>
-          </div>
-        </td>
-        <td>
           <button>
             Edit
           </button>
         </td>
       </tr>
       <tr>
-        <td>
-          <div
-            className="truncated-string"
-          >
-            <div
-              data-testid="truncated-value"
-            >
-              2
-            </div>
-          </div>
-        </td>
-        <td>
-          <div
-            className="truncated-string"
-          >
-            <div
-              data-testid="truncated-value"
-            >
-              Test 2
-            </div>
-          </div>
-        </td>
         <td>
           <button>
             Edit

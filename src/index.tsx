@@ -85,7 +85,7 @@ export class AutoTable extends Component<AutoTableProps, AutoTableState> {
 
     setCurrentPage = (e: any) => {
         const {setCurrentPage, pages} = this.props;
-        const newCurrentPage = parseInt(e.target.value);
+        const newCurrentPage = parseInt(e.target.value, 10);
 
         if (!newCurrentPage || (newCurrentPage > pages || newCurrentPage <= 0)) {
             return;
