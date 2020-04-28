@@ -11,12 +11,65 @@ Fast and easy customizable table built on json data for React apps.
 $ npm install @avezen/react-auto-table
 ```
 
+## Config
+
+
+You can choose values to render in table.
+Order matters.
+
+While getting json response with data as:
+
+```js
+Request: {
+   requestName: string;
+   description: string;
+   createDate: number(timestamp);
+   endDate: number(timestamp);
+   status: boolean;
+   id: number;
+}
+```
+
+And initializing table with this config:
+
+
+```js
+const config = {
+    id: {
+        name: 'Id',
+    },
+    requestName: {
+        name: 'Request name'
+    },
+    description: {
+        name: 'Description'
+    },
+    createDate: {
+        name: 'Create date',
+        type: 'timestamp'
+    },
+    endDate: {
+        name: 'End date',
+        type: 'timestamp'
+    },
+    status: {
+        name: 'Status',
+        type: 'boolean',
+    }
+};
+```
+
+You will get table:
+
+Id | Request name | Description | Create date | End date | Status
+(photos soon)
+
 ## Usage
 
 ```js
 import React, {Component} from 'react';
 import {fetchRequests, fetchRequestsByValue} from "../../service/FakeApiService";
-import RequestsTable from "@avezen/react-auto-table";
+import {AutoTable} from "@avezen/react-auto-table";
 
 const colWidths = [
     140,
@@ -25,12 +78,32 @@ const colWidths = [
     200,
     120,
     80,
-    140,
-    100,
-    70,
-    60,
-    70
+    140
 ];
+
+const config = {
+    id: {
+        name: 'Id',
+    },
+    requestName: {
+        name: 'Request name'
+    },
+    description: {
+        name: 'Description'
+    },
+    createDate: {
+        name: 'Create date',
+        type: 'timestamp'
+    },
+    endDate: {
+        name: 'End date',
+        type: 'timestamp'
+    },
+    status: {
+        name: 'Status',
+        type: 'boolean',
+    }
+};
 
 class RequestsTableContainer extends Component {
     state = {
@@ -51,10 +124,10 @@ class RequestsTableContainer extends Component {
     render() {
         const { requests, currentPage, pages, search, sortBy, sortDirection, isFetching, error } = this.state;
         return (
-            <RequestsTable
+            <AutoTable
                 data={requests}
                 currentPage={currentPage}
-                setCurrentPage={this.setPage}
+                setCurrentPage={this.setCurrentPage}
                 pages={pages}
                 search={search}
                 setSearch={this.setSearch}
@@ -64,7 +137,7 @@ class RequestsTableContainer extends Component {
                 setSortDirection={this.setSortDirection}
                 isFetching={isFetching}
                 error={error}
-
+                config={config}
                 colWidths={colWidths}
             />
         );
