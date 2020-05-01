@@ -3,6 +3,7 @@
 [![npm (scoped)](https://img.shields.io/npm/v/@avezen/react-auto-table.svg)](https://www.npmjs.com/package/@avezen/react-auto-table)
 [![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/@avezen/react-auto-table.svg)](https://www.npmjs.com/package/@avezen/react-auto-table)
 
+
 Fast and easy customizable table built on json data for React apps.
 
 ## Install
